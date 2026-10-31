@@ -56,15 +56,15 @@ var C={
  coding:["Competitive coding profiles",function(){return H("# Coding profiles")+[["Codolio",L.cd],["LeetCode",L.lc],["HackerRank",L.hr],["Codeforces",L.cf],["CodeChef",L.cc]].map(function(x){return (x[0]+"           ").slice(0,12)+A(x[1])}).join("\n")}],
  socials:["External links",function(){return H("# Socials")+"GitHub      "+A(L.gh)+"\nLinkedIn    "+A(L.li)+"\nCodolio     "+A(L.cd)}],
  contact:["Send me a message (interactive)",function(){startContact();return null}],
- ask:["ask <question> | ask about my resume",function(a){
-  var q=a.join(" ");if(!q)return"Usage: ask <question>";
+ ask:["ask &lt;question&gt; | ask about my resume",function(a){
+  var q=a.join(" ");if(!q)return"Usage: ask &lt;question&gt;";
   out("thinking...");
   fetch("/api/ask",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:q})})
    .then(function(r){return r.json()}).then(function(d){out(esc(d.answer))})
    .catch(function(){out("Could not reach the assistant right now.")});
   return null}],
  resume:["Open my resume (PDF)",function(){window.open("resume.pdf","_blank");return "Opening resume... "+A("resume.pdf","click here if it did not open")}],
- theme:["theme <name> | dracula nord gruvbox solarized tokyo default",function(a){var n=a[0];if(!n)return"Usage: theme <name>\nAvailable: "+TH.join(", ");if(TH.indexOf(n)<0)return"Unknown theme: "+n+"\nAvailable: "+TH.join(", ");setT(n);return"Theme set to "+n}],
+ theme:["theme &lt;name&gt; | dracula nord gruvbox solarized tokyo default",function(a){var n=a[0];if(!n)return"Usage: theme &lt;name&gt;\nAvailable: "+TH.join(", ");if(TH.indexOf(n)<0)return"Unknown theme: "+n+"\nAvailable: "+TH.join(", ");setT(n);return"Theme set to "+n}],
  whoami:["Who am I?",function(){return"monika | full-stack developer in the making"}],
  man:["List all commands",function(a){if(a[0]&&C[a[0]])return a[0]+": "+C[a[0]][0];return help()}],
  help:["Alias for man",function(){return help()}],
