@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monika Singh | Terminal Resume</title>
+<style>
+:root{--bg:#0d1117;--fg:#c9d1d9;--ac:#3fb950;--mu:#8b949e;--lk:#58a6ff;--hl:#d29922;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-t=dracula]{--bg:#282a36;--fg:#f8f8f2;--ac:#50fa7b;--mu:#6272a4;--lk:#8be9fd;--hl:#f1fa8c}
+:root[data-t=nord]{--bg:#2e3440;--fg:#d8dee9;--ac:#a3be8c;--mu:#7b88a1;--lk:#88c0d0;--hl:#ebcb8b}
+:root[data-t=gruvbox]{--bg:#282828;--fg:#ebdbb2;--ac:#b8bb26;--mu:#928374;--lk:#83a598;--hl:#fabd2f}
+:root[data-t=solarized]{--bg:#002b36;--fg:#93a1a1;--ac:#859900;--mu:#586e75;--lk:#268bd2;--hl:#b58900}
+:root[data-t=tokyo]{--bg:#1a1b26;--fg:#c0caf5;--ac:#9ece6a;--mu:#565f89;--lk:#7aa2f7;--hl:#e0af68}
+html,body{height:100%;margin:0;background:var(--bg)}
+body{color:var(--fg);font:15px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+#t{height:100%;overflow-y:auto;padding:16px 18px 40px;max-width:960px;margin:0 auto;box-sizing:border-box}
+.l{white-space:pre-wrap;word-break:break-word;margin:0}
+.p{color:var(--ac)}.m{color:var(--mu)}.h{color:var(--hl)}.a{color:var(--ac)}
+a,.c{color:var(--lk);text-decoration:underline;cursor:pointer}
+.row{display:flex;gap:8px}
+#i{flex:1;background:none;border:0;outline:0;color:var(--fg);font:inherit;min-width:0;caret-color:var(--ac)}
+.b{margin:6px 0 10px}
+.tag{display:inline-block;border:1px solid var(--mu);border-radius:4px;padding:0 6px;margin:2px 4px 2px 0;font-size:13px}
+.art{color:var(--ac);font-size:clamp(7px,2.2vw,14px);line-height:1.15}
+</style>
+</head>
+<body>
+<div id="t"><div id="o"></div>
+<div class="row"><span class="p" id="ps"></span><input id="i" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="terminal input" autofocus></div></div>
+<script>
+(function(){
+var U="monika@resume",$=function(x){return document.getElementById(x)},o=$("o"),inp=$("i"),T=$("t");
+$("ps").textContent=U+":~$";
+var L={
+ gh:"https://github.com/monika-singh-baghel",
+ ga:"https://govai-complaint-system.vercel.app/",
+ li:"https://www.linkedin.com/in/monika-singh-578701279/",
+ cd:"https://codolio.com/profile/cFfVFNmG",
+ lc:"https://leetcode.com/u/monikasingh_91/",
+ hr:"https://www.hackerrank.com/profile/3891monikasingh",
+ cf:"https://codeforces.com/profile/3891monikasingh",
+ cc:"https://www.codechef.com/users/monikasingh_91"
+};
+var EMAIL="2829monikasingh@gmail.com",PHONE="+919243146635";
+function A(u,t){return '<a href="'+u+'" target="_blank" rel="noopener noreferrer">'+(t||u)+'</a>'}
+function H(s){return '<div class="h">'+s+'</div>'}
+function tags(a){return a.map(function(x){return '<span class="tag">'+x+'</span>'}).join("")}
+var C={
+ about:["Profile summary",function(){return H("# About")+"Monika Singh | CSE student at Chandigarh University, aiming for software engineering and full-stack roles.\nStrong in C/C++, data structures and algorithms, with knowledge of operating systems concepts and memory management. Basic understanding of databases and the SDLC. Problem-solver with good communication and teamwork skills.\nLocation: Mohali, India"}],
+ education:["Academic background",function(){return H("# Education")+'Chandigarh University, Mohali | B.E. Computer Science | May 2023 - Present | CGPA 8.67\nChanakya Public School, Satna | Intermediate (CBSE) | 90.4%\nChanakya Public School, Satna | Matriculation (CBSE) | 93%'}],
+ skills:["Technical skills",function(){return H("# Skills")+'<div class="b">Languages    '+tags(["C","C++","Java","Python","HTML"])+'</div><div class="b">Frameworks   '+tags(["React","React Native","Tailwind CSS","JavaScript","TypeScript"])+'</div><div class="b">Tools        '+tags(["VS Code","Git","GitHub","Jest"])+'</div><div class="b">Databases    '+tags(["SQL","NoSQL"])+'</div><div class="b">Soft skills  '+tags(["Problem-solving","Communication","Teamwork"])+'</div>Spoken: English, Hindi'}],
+ experience:["Internships",function(){return H("# Experience")+'<span class="a">Web Development Intern</span> | Skillcraft Technology (Remote) | Jun 2025 - Jul 2025\n - Built responsive websites with HTML, CSS, JavaScript and Bootstrap\n - Implemented user authentication and authorization with server-side logic\n <span class="m">Stack: React, Node.js, Express, MongoDB, Tailwind CSS</span>\n\n<span class="a">Data Science Intern</span> | Chandigarh University (Remote) | May 2025 - Jun 2025\n - Performed data analysis and applied machine learning with Python\n - Built visualizations with Matplotlib and Seaborn\n <span class="m">Stack: Python, Matplotlib, Seaborn</span>'}],
+ projects:["Projects with links",function(){return H("# Projects")+'<span class="a">1. GovAi</span> | Complaint Management and Resolution System | Oct 2025 - Apr 2026\n - Full-stack app for complaint registration, tracking and management\n - RESTful APIs (Node.js, Express) for auth and complaint CRUD, MongoDB Atlas storage\n - Auth, authorization, CORS, env-based config; deployed on Vercel and Render\n <span class="m">React, Node.js, Express, MongoDB, Tailwind CSS, TypeScript</span>\n Live: '+A(L.ga)+'\n Code: '+A(L.gh,"GitHub profile")+'\n\n<span class="a">2. SyncMeet</span> | Real-Time Video Conferencing Platform | Apr 2026 - Jun 2026\n - Peer-to-peer audio/video using WebRTC and Socket.IO\n - STUN/ICE signaling, SDP negotiation, screen sharing, real-time chat\n - Meeting history, bcrypt and token-based secure auth\n <span class="m">WebRTC, Socket.IO, React, Node.js, Express, MongoDB, Material UI</span>\n '+A(L.gh,"GitHub profile")}],
+ certifications:["Certifications and events",function(){return H("# Certifications")+'Cloud Computing | NPTEL Online Certification | 2025\nProject Expo 2025 (Phase 3) | Chandigarh University | VibeFlow music player (streaming, secure media upload)\nTekathon 4.0 (internal SIH hackathon) | Chandigarh University | 2025'}],
+ involvement:["Volunteering and leadership",function(){return H("# Involvement")+'Volunteer | IEEE Computational Intelligence | event coordination, technical activities, community engagement\nClass Representative | Chandigarh University | 4th and 5th semester | coordinated class activities, organized academic and extracurricular events'}],
+ coding:["Competitive coding profiles",function(){return H("# Coding profiles")+[["Codolio",L.cd],["LeetCode",L.lc],["HackerRank",L.hr],["Codeforces",L.cf],["CodeChef",L.cc]].map(function(x){return (x[0]+"           ").slice(0,12)+A(x[1])}).join("\n")}],
+ socials:["External links",function(){return H("# Socials")+"GitHub      "+A(L.gh)+"\nLinkedIn    "+A(L.li)+"\nCodolio     "+A(L.cd)}],
+ contact:["Send me a message (interactive)",function(){startContact();return null}],
+ ask:["ask <question> | ask about my resume",function(a){
+  var q=a.join(" ");if(!q)return"Usage: ask <question>";
+  out("thinking...");
+  fetch("/api/ask",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:q})})
+   .then(function(r){return r.json()}).then(function(d){out(esc(d.answer))})
+   .catch(function(){out("Could not reach the assistant right now.")});
+  return null}],
+ resume:["Open my resume (PDF)",function(){window.open("resume.pdf","_blank");return "Opening resume... "+A("resume.pdf","click here if it did not open")}],
+ theme:["theme <name> | dracula nord gruvbox solarized tokyo default",function(a){var n=a[0];if(!n)return"Usage: theme <name>\nAvailable: "+TH.join(", ");if(TH.indexOf(n)<0)return"Unknown theme: "+n+"\nAvailable: "+TH.join(", ");setT(n);return"Theme set to "+n}],
+ whoami:["Who am I?",function(){return"monika | full-stack developer in the making"}],
+ man:["List all commands",function(a){if(a[0]&&C[a[0]])return a[0]+": "+C[a[0]][0];return help()}],
+ help:["Alias for man",function(){return help()}],
+ clear:["Clear the terminal",function(){o.innerHTML="";return null}]
+};
+var TH=["default","dracula","nord","gruvbox","solarized","tokyo"],names=Object.keys(C);
+function setT(n){if(n==="default")document.documentElement.removeAttribute("data-t");else document.documentElement.setAttribute("data-t",n);try{localStorage.setItem("th",n)}catch(e){}}
+try{var s=localStorage.getItem("th");if(s&&TH.indexOf(s)>=0)setT(s)}catch(e){}
+function help(){return H("# Commands (click or type, Tab to complete, up/down for history)")+names.filter(function(n){return n!=="help"}).map(function(n){return '<span class="c" data-c="'+n+'">'+(n+"              ").slice(0,14)+'</span> <span class="m">'+C[n][0]+'</span>'}).join("\n")}
+function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function out(h){var d=document.createElement("pre");d.className="l";d.innerHTML=h;o.appendChild(d);T.scrollTop=T.scrollHeight}
+function lev(a,b){var m=[],i,j;for(i=0;i<=a.length;i++){m[i]=[i]}for(j=0;j<=b.length;j++)m[0][j]=j;for(i=1;i<=a.length;i++)for(j=1;j<=b.length;j++)m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return m[a.length][b.length]}
+var flow=null,Q=["name","email","message"],P=["? Email:","? Message:","? Confirm send? (y/n)"];
+function startContact(){flow={step:0,data:{}};out("? Name: (type esc to cancel)")}
+function flowStep(v){
+ out('<span class="m">&gt;</span> '+esc(v));
+ if(v.trim().toLowerCase()==="esc"){flow=null;out("Cancelled.");return}
+ var f=flow;
+ if(f.step<3){
+  if(f.step===1&&!/^\S+@\S+\.\S+$/.test(v.trim()))return out("Enter a valid email");
+  if(!v.trim())return out("This field is required");
+  f.data[Q[f.step]]=v.trim();f.step++;out(P[f.step-1]);
+ }else{
+  flow=null;
+  if(v.trim().toLowerCase()!=="y")return out("Cancelled.");
+  out("Sending...");
+  fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(f.data)})
+   .then(function(r){out(r.ok?"Message sent. Thank you!":"Failed to send. Please email me directly.")})
+   .catch(function(){out("Network error. Please email me directly.")});
+ }
+}
+var hist=[],hp=0;
+try{hist=JSON.parse(localStorage.getItem("hs")||"[]")}catch(e){hist=[]}
+hp=hist.length;
+function run(raw){
+ var v=raw.trim();out('<span class="p">'+U+':~$</span> '+esc(raw));
+ if(!v)return;
+ hist.push(v);hist=hist.slice(-50);hp=hist.length;try{localStorage.setItem("hs",JSON.stringify(hist))}catch(e){}
+ var p=v.split(/\s+/),c=p[0].toLowerCase();
+ if(C[c]){var r=C[c][1](p.slice(1));if(r!==null)out(r);return}
+ var best=null,bd=3;names.forEach(function(n){var d=lev(c,n);if(d<bd){bd=d;best=n}});
+ out("command not found: "+esc(c)+(best?'\nDid you mean: <span class="c" data-c="'+best+'">'+best+"</span> ?":'\nType <span class="c" data-c="man">man</span> to see commands.'));
+}
+inp.addEventListener("keydown",function(e){
+ if(e.key==="Enter"){var v=inp.value;inp.value="";if(flow){flowStep(v)}else{run(v)}}
+ else if(e.key==="ArrowUp"){e.preventDefault();if(hp>0){hp--;inp.value=hist[hp]}}
+ else if(e.key==="ArrowDown"){e.preventDefault();if(hp<hist.length-1){hp++;inp.value=hist[hp]}else{hp=hist.length;inp.value=""}}
+ else if(e.key==="Tab"){e.preventDefault();var p=inp.value.split(/\s+/);
+  if(p.length===1){var m=names.filter(function(n){return n.indexOf(p[0])===0});if(m.length===1)inp.value=m[0]+" ";else if(m.length>1)out(m.join("   "))}
+  else if(p[0]==="theme"){var m2=TH.filter(function(n){return n.indexOf(p[1])===0});if(m2.length===1)inp.value="theme "+m2[0]}}
+ else if(e.key==="l"&&e.ctrlKey){e.preventDefault();o.innerHTML=""}
+});
+document.addEventListener("click",function(e){var c=e.target.getAttribute&&e.target.getAttribute("data-c");if(c){run(c);inp.focus();return}if(!window.getSelection().toString())inp.focus()});
+var art=["  __  __  ___  _   _ ___ _  __ _    ",
+" |  \\/  |/ _ \\| \\ | |_ _| |/ // \\   ",
+" | |\\/| | | | |  \\| || || ' // _ \\  ",
+" | |  | | |_| | |\\  || || . \\/ ___ \\ ",
+" |_|  |_|\\___/|_| \\_|___|_|\\_\\_/   \\_\\"].join("\n");
+out('<span class="art">'+esc(art)+'</span>');
+out('Welcome to Monika Singh\u2019s interactive terminal resume.\n<span class="m">CSE student | Full-stack developer | Mohali, India</span>\n\nType <span class="c" data-c="man">man</span> for commands, or try <span class="c" data-c="about">about</span>, <span class="c" data-c="projects">projects</span>, <span class="c" data-c="skills">skills</span>, <span class="c" data-c="contact">contact</span>.\n');
+})();
+</script>
+</body>
+</html>
