@@ -56,7 +56,7 @@ export default async function handler(req, res) {
     );
     const d = await r.json();
     res.json({
-      answer: d.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, no answer right now.",
+      answer: d.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, no answer right now. (" + (d.error?.message || JSON.stringify(d).slice(0, 200)) + ")",
     });
   } catch (e) {
     res.status(500).json({ answer: "Sorry, the assistant is unavailable right now." });
