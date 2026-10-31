@@ -4,8 +4,6 @@ An interactive, browser-based terminal that showcases my resume through a comman
 
 **Live demo:** https://terminal-resume-kkmn.vercel.app/
 
-Inspired by [ksidharth8/terminal-resume](https://github.com/ksidharth8/terminal-resume).
-
 ---
 
 ## Features
@@ -130,9 +128,3 @@ B.E. Computer Science, Chandigarh University
 - LinkedIn: [monika-singh-578701279](https://www.linkedin.com/in/monika-singh-578701279/)
 - LeetCode: [monikasingh_91](https://leetcode.com/u/monikasingh_91/)
 - Codolio: [cFfVFNmG](https://codolio.com/profile/cFfVFNmG)
-
----
-
-## Acknowledgements
-
-Idea and structure inspired by [ksidharth8/terminal-resume](https://github.com/ksidharth8/terminal-resume) (MIT license).
